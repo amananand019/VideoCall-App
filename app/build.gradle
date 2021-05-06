@@ -49,6 +49,9 @@ dependencies {
     // FirebaseUI for Firebase Realtime Database
     implementation 'com.firebaseui:firebase-ui-database:7.1.1'
 
+    //for country code
+    implementation 'com.hbb20:ccp:2.1.9'
+    implementation 'pub.devrel:easypermissions:0.4.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
