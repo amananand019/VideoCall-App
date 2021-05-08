@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
@@ -157,5 +157,18 @@ public class RegisterActivity extends AppCompatActivity {
         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(firebaseUser != null){
+            Intent homeIntent = new Intent(RegisterActivity.this, MainActivity.class);
+            startActivity(homeIntent);
+            finish();
+        }
     }
 }
