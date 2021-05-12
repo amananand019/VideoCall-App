@@ -6,12 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".NotificationActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notification Page"
-        android:textColor="@color/white"
-        android:layout_centerInParent="true"
-        android:textSize="30dp"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_find_peoples"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp">
+            <TextView
+                android:text="Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_marginStart="12dp"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification_list"
+        android:layout_below="@id/toolbar_find_peoples"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>
