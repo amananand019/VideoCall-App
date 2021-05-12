@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -154,7 +153,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void sendUserToMainActivity(){
-        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+        Intent intent = new Intent(RegisterActivity.this, ContactsActivity.class);
         startActivity(intent);
         finish();
     }
@@ -166,7 +165,7 @@ public class RegisterActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if(firebaseUser != null){
-            Intent homeIntent = new Intent(RegisterActivity.this, MainActivity.class);
+            Intent homeIntent = new Intent(RegisterActivity.this, ContactsActivity.class);
             startActivity(homeIntent);
             finish();
         }
